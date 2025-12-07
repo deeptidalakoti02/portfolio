@@ -41,6 +41,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  grid-auto-rows: 1fr;
+}
+
+.projects-grid > div {
+  display: flex;
 }
 
 /* Responsive */

@@ -1,4 +1,5 @@
 import './HeroSection.css';
+import deeptiImage from '../assets/images/deepti-profile.jpeg';
 
 const HeroSection = () => {
   return (
@@ -10,7 +11,7 @@ const HeroSection = () => {
         {/* Intro Card */}
         <div className="intro-card">
           <div className="intro-image">
-            <img src="https://via.placeholder.com/56" alt="Deepti Dalakoti" />
+            <img src={deeptiImage} alt="Deepti Dalakoti" />
           </div>
           <div className="intro-text">
             <p className="intro-greeting">Hello, I'm</p>
