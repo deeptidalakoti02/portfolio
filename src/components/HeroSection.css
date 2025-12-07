@@ -1,0 +1,282 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated grain texture overlay */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1.5px,
+      rgba(100, 100, 100, 0.06) 1.5px,
+      rgba(100, 100, 100, 0.06) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1.5px,
+      rgba(100, 100, 100, 0.06) 1.5px,
+      rgba(100, 100, 100, 0.06) 3px
+    );
+  background-size: 100% 100%, 100% 100%;
+  opacity: 0.5;
+  animation: grainMove 8s steps(10) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background decorative elements */
+.hero-section .bg-gradient-1 {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(233, 30, 99, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-section .bg-gradient-2 {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(159, 151, 144, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+/* Additional film grain texture */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.18'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  opacity: 0.7;
+  animation: grainFade 0.4s steps(5) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 1400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Intro Card Styles */
+.intro-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  width: 246px;
+  height: 72px;
+  border-radius: 40px;
+  padding: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.intro-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.intro-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 8px;
+}
+
+.intro-greeting {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.intro-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1C1C1C;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Hero Body Text */
+.hero-body-text {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.hero-line1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  line-height: 1.3;
+  margin: 0;
+  color: #FFEBDA;
+}
+
+.hero-line1 .a-letter {
+  font-weight: 600;
+}
+
+.hero-line1 .product-designer {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.hero-line2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: #FFEBDA;
+}
+
+.hero-line2 .clarity {
+  color: #FF006E;
+  font-style: italic;
+}
+
+/* CTA Buttons */
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 1s ease-out 1.4s both;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-block;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cta-primary:hover,
+.cta-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(234, 234, 234, 0.2);
+  border-color: var(--button-bg);
+}
+
+.cta-primary:active,
+.cta-secondary:active {
+  transform: translateY(0);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 1s ease-out 1.6s both, bounce 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .hero-line1,
+  .hero-line2 {
+    font-size: 32px;
+  }
+
+  .intro-card {
+    width: 220px;
+    height: 64px;
+  }
+
+  .intro-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .intro-name {
+    font-size: 16px;
+  }
+
+  .intro-greeting {
+    font-size: 12px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-line1,
+  .hero-line2 {
+    font-size: 24px;
+  }
+
+  .bg-gradient-1,
+  .bg-gradient-2 {
+    width: 500px;
+    height: 500px;
+  }
+}
