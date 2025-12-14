@@ -20,6 +20,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
 }
 
 .skill-text {
@@ -31,6 +36,26 @@
 
 .star-separator {
   flex-shrink: 0;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-separator:nth-child(2n) {
+  animation-delay: 0.5s;
+}
+
+.star-separator:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
 }
 
 @keyframes scroll {

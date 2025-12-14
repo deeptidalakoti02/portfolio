@@ -1,0 +1,252 @@
+.experience-section {
+  min-height: 100vh;
+  padding: 6rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(187, 195, 255, 0.08), transparent);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: pulse 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+.experience-section::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -8%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.06), transparent);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: pulse 18s ease-in-out infinite 2s;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.experience-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFEBDA;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.experience-intro {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 auto 4rem;
+  max-width: 800px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.experience-card {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 42, 42, 0.9) 0%,
+    rgba(35, 35, 35, 0.95) 100%
+  );
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.experience-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.experience-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.experience-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.experience-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF006E, #E91E63, #FF006E);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.15), rgba(233, 30, 99, 0.15));
+  border-radius: 12px;
+  color: #FF006E;
+  font-size: 28px;
+}
+
+.card-icon svg {
+  stroke: #FF006E;
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFEBDA;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .experience-heading {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-intro {
+    font-size: 16px;
+    margin-bottom: 3rem;
+  }
+
+  .experience-grid {
+    gap: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-heading {
+    font-size: 28px;
+  }
+
+  .experience-intro {
+    font-size: 15px;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+}

@@ -5,7 +5,7 @@ const Navigation = () => {
     <nav>
       <div className="nav-container">
         <div className="logo-container">
-          <svg className="logo" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="logo" width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="25" cy="25" r="25" fill="#E91E63"/>
             <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fontFamily="Rouge Script" fontSize="32" fill="white">
               D
